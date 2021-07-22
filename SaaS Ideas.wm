@@ -1,0 +1,37 @@
+title SaaS Ideas
+
+style wardley
+
+component Customer [1, 0.45]
+component Similar Problem [0.74, 0.35] (build) label [-75, 1]
+component Unique Problem [0.92, 0.21] (build) label [-44, 23]
+
+Customer->Similar Problem
+Customer->Unique Problem
+
+
+component Side Effect [0.87, 0.61] (buy) label [10, -20]
+Customer->Side Effect
+
+
+component Enabler [0.70, 0.58] (buy)
+Customer->Enabler
+Similar Problem->Enabler
+
+component CRM [0.68, 0.68] (buy)
+Enabler->CRM
+
+component Platform [0.5, 0.58] (buy)
+Enabler->Platform 
+
+component Compute [0.35, 0.69] (buy)
+Platform->Compute
+CRM->Compute
+
+component Data Centre [0.15, 0.58] (buy)
+Compute->Data Centre
+CRM->Compute
+
+component Power [0.1, 0.9] (outsource)
+Data Centre->Power
+Compute->Power 
