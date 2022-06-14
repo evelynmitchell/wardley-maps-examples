@@ -1,0 +1,47 @@
+title Decarbonization
+
+style handwritten
+
+# the first number is the Value Chain Visibility, the second the Commoditization 
+
+component Households [1, 0.25]
+
+component HVAC [0.74, 0.35] (build) label [-75, 1]
+component People Transportation [0.92, 0.21] (build) label [-44, 23]
+component Industrial [.01, .5]
+component Electricity [.01,.95]
+component Bulk Transportation[.02, .5]
+
+https://onlinewardleymaps.com/
+Households->HVAC
+Households->People Transportation
+Industrial->Bulk Transportation
+Electricity->Transmission Losses
+
+
+component Transmission Losses [0.2, 0.9] (buy) label [10, -20]
+Customer->Side Effect
+
+Coal Power -> Electricity
+
+component Enabler [0.70, 0.58] (buy)
+Customer->Enabler
+Similar Problem->Enabler
+
+component CRM [0.68, 0.68] (buy)
+Enabler->CRM
+
+component Platform [0.5, 0.58] (buy)
+Enabler->Platform 
+
+component Compute [0.35, 0.69] (buy)
+Platform->Compute
+CRM->Compute
+
+component Data Centre [0.15, 0.58] (buy)
+Compute->Data Centre
+CRM->Compute
+
+component Coal Power [0.1, 0.9] (outsource) inertia
+Data Centre->Power
+Compute->Power 
