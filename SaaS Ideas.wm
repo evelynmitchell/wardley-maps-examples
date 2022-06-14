@@ -2,7 +2,9 @@ title SaaS Ideas
 
 style wardley
 
-component Customer [1, 0.45]
+# the first number is the Value Chain Visibility, the second the Commoditization 
+
+component Customer [.5, 0.95]
 component Similar Problem [0.74, 0.35] (build) label [-75, 1]
 component Unique Problem [0.92, 0.21] (build) label [-44, 23]
 
